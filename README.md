@@ -1,84 +1,440 @@
 # Bulk Image Generator for Google Flow
 
-A Chrome extension that helps you manage and process multiple image-generation prompts for Google Flow.
+A lightweight Chrome extension that helps you manage multiple image-generation prompts for **Google Flow**.
 
-## Installation
+Instead of repeatedly keeping prompts in a separate text file and manually selecting them, this extension lets you upload a `.txt` file, separates the prompts, and provides a **Copy** button for each prompt.
 
-1. Download this repository:
-   - Click **Code**
-   - Click **Download ZIP**
-
-2. Extract the ZIP file.
-
-3. Open Google Chrome and go to:
-
-   `chrome://extensions`
-
-4. Turn ON **Developer mode**.
-
-5. Click **Load unpacked**.
-
-6. Open the extracted repository and select the **`bulk image generator`** folder.
-
-7. Make sure you select the folder that contains `manifest.json`.
-
-8. The extension will now appear in Chrome.
+> **Important:** This extension does **not** automatically enter or submit prompts in Google Flow. Copying and pasting the prompts into Google Flow is done manually.
 
 ---
 
-## Usage
+## Features
 
-### 1. Create your prompts `.txt` file
+- Upload multiple prompts using a `.txt` file
+- Automatically separates prompts using blank lines
+- Displays prompts individually
+- Copy each prompt with one click
+- Works as a local Chrome extension
+- No backend required
+- No API key required
+- No database required
+- Simple and lightweight
 
-Create a normal text file, for example:
+---
+
+## How It Works
+
+```text
+                 prompts.txt
+                     │
+                     ▼
+          ┌─────────────────────┐
+          │   Bulk Image        │
+          │     Generator       │
+          │      Extension      │
+          └──────────┬──────────┘
+                     │
+                     ▼
+              Prompt 1 → Copy
+              Prompt 2 → Copy
+              Prompt 3 → Copy
+              Prompt 4 → Copy
+                     │
+                     ▼
+                Google Flow
+                     │
+                     ▼
+            Paste Prompt Manually
+                     │
+                     ▼
+               Generate Image
+```
+
+The extension handles **prompt organization and copying**.
+
+Google Flow handles the actual image generation.
+
+---
+
+# Installation
+
+This extension is currently distributed as an **unpacked Chrome extension** and is not installed through the Chrome Web Store.
+
+## Step 1 — Download the Repository
+
+Go to the GitHub repository:
+
+**Bulk Image Generator**
+
+Click:
+
+```text
+Code → Download ZIP
+```
+
+---
+
+## Step 2 — Extract the ZIP
+
+Extract the downloaded ZIP file.
+
+You should see the project folder.
+
+Inside the repository, the extension is located in:
+
+```text
+bulk image generator/
+```
+
+---
+
+## Step 3 — Open Chrome Extensions
+
+Open Google Chrome and go to:
+
+```text
+chrome://extensions
+```
+
+---
+
+## Step 4 — Enable Developer Mode
+
+Turn on:
+
+```text
+Developer mode
+```
+
+You will find this option in the top-right corner of the Chrome Extensions page.
+
+---
+
+## Step 5 — Load the Extension
+
+Click:
+
+```text
+Load unpacked
+```
+
+Select the:
+
+```text
+bulk image generator
+```
+
+folder.
+
+Make sure this is the folder containing:
+
+```text
+manifest.json
+```
+
+Chrome will load the extension.
+
+---
+
+## Step 6 — Open the Extension
+
+The **Bulk Image Generator** extension should now appear in your Chrome extensions list.
+
+You can pin it to the Chrome toolbar for easier access.
+
+---
+
+# Usage
+
+## Step 1 — Create a `.txt` File
+
+Create a normal text file.
+
+For example:
 
 ```text
 prompts.txt
 ```
 
-Write your image-generation prompts inside the file.
+Write your image-generation prompts inside this file.
 
-**Important:** Keep one prompt as one paragraph and leave a **blank line** between prompts.
+### Important
 
-Example:
+Use a **blank line between each prompt**.
+
+For example:
 
 ```text
 A cinematic portrait of a warrior standing on a mountain at sunrise.
 
-A futuristic city at night, neon lights, flying cars and rain reflections.
+A futuristic city at night with neon lights, flying cars and rain reflections.
 
 A peaceful Japanese village during autumn, cinematic lighting and detailed environment.
 
-A realistic astronaut standing on Mars, dramatic sunset and cinematic composition.
+A realistic astronaut standing on Mars during sunset, cinematic composition.
 ```
 
-Each separated block is treated as **one prompt**.
+The extension will treat this as **4 separate prompts**.
 
-So the above file contains **4 prompts**.
+---
 
-### 2. Open Google Flow
+# Prompt Format
 
-Open Google Flow in Chrome and go to the image generation workflow.
+The basic format is:
 
-### 3. Open Bulk Image Generator
+```text
+Prompt 1
 
-Click the **Bulk Image Generator** extension from the Chrome extensions menu.
+Prompt 2
 
-### 4. Upload your `.txt` file
+Prompt 3
 
-Upload the `prompts.txt` file you created.
+Prompt 4
+```
+
+Each prompt should be separated by a blank line.
+
+### Example
+
+```text
+A cinematic portrait of a warrior standing on a mountain.
+
+A futuristic city at night with neon lights and flying cars.
+
+A peaceful village during autumn with mountains in the background.
+```
+
+The extension identifies:
+
+```text
+Prompt 1
+Prompt 2
+Prompt 3
+```
+
+as separate prompts.
+
+---
+
+# Using the Extension
+
+## 1. Open the Extension
+
+Click the **Bulk Image Generator** extension from the Chrome toolbar.
+
+---
+
+## 2. Upload Your `.txt` File
+
+Select the `.txt` file containing your prompts.
+
+For example:
+
+```text
+prompts.txt
+```
 
 The extension will read the file and separate the prompts automatically.
 
-### 5. Generate images
+---
 
-Use the extension's prompt controls to process the prompts one by one in Google Flow.
+## 3. View Your Prompts
+
+The extension will display your prompts individually.
+
+For example:
+
+```text
+Prompt 1
+[Copy]
+
+Prompt 2
+[Copy]
+
+Prompt 3
+[Copy]
+
+Prompt 4
+[Copy]
+```
 
 ---
 
-## Prompt File Format
+## 4. Copy a Prompt
 
-Use:
+Click the **Copy** button next to the prompt you want to use.
+
+The prompt is copied to your clipboard.
+
+---
+
+## 5. Open Google Flow
+
+Open **Google Flow** in Chrome.
+
+Go to the image-generation interface.
+
+---
+
+## 6. Paste the Prompt Manually
+
+Paste the copied prompt into Google Flow.
+
+The process is:
+
+```text
+Bulk Image Generator
+        │
+        ▼
+   Click Copy
+        │
+        ▼
+   Open Google Flow
+        │
+        ▼
+   Paste Prompt
+        │
+        ▼
+ Generate Image
+```
+
+---
+
+## 7. Repeat
+
+Copy the next prompt from the extension and manually paste it into Google Flow.
+
+Repeat this process for all prompts.
+
+---
+
+# Important: Manual Copy & Paste
+
+This extension **does not automatically control Google Flow**.
+
+It does not:
+
+- Automatically paste prompts
+- Automatically click Generate
+- Automatically submit prompts
+- Automatically generate images
+- Automatically interact with Google Flow
+
+The user manually performs:
+
+**Copy → Paste → Generate**
+
+This keeps the extension simple and avoids directly automating the Google Flow interface.
+
+---
+
+# Example Workflow
+
+Suppose your `prompts.txt` contains:
+
+```text
+A cinematic portrait of a samurai standing in the rain.
+
+A futuristic city with flying cars at night.
+
+A peaceful forest with sunlight passing through the trees.
+
+An astronaut walking on Mars during sunset.
+```
+
+The extension separates them into:
+
+```text
+Prompt 1
+Prompt 2
+Prompt 3
+Prompt 4
+```
+
+Then:
+
+```text
+Prompt 1 → Copy → Paste into Google Flow → Generate
+
+Prompt 2 → Copy → Paste into Google Flow → Generate
+
+Prompt 3 → Copy → Paste into Google Flow → Generate
+
+Prompt 4 → Copy → Paste into Google Flow → Generate
+```
+
+---
+
+# Recommended Prompt File
+
+For the best results, keep each prompt as a separate paragraph.
+
+Example:
+
+```text
+A cinematic photograph of a lone warrior standing on a mountain peak during sunrise, dramatic clouds, realistic lighting, detailed environment.
+
+A futuristic cyberpunk city at night, neon signs, flying vehicles, wet streets reflecting colorful lights, cinematic photography.
+
+A peaceful Japanese village during autumn, traditional houses, orange maple trees, mountains in the background, warm morning light.
+
+A realistic astronaut standing on the surface of Mars, dramatic sunset, detailed spacesuit, cinematic composition.
+```
+
+---
+
+# Requirements
+
+You need:
+
+- Google Chrome
+- Google Flow access
+- The Bulk Image Generator extension
+- A `.txt` file containing your prompts
+
+---
+
+# Privacy
+
+The extension is designed to work locally in the browser.
+
+Your prompt `.txt` file is used by the extension to read and display your prompts.
+
+No backend or database is required for the extension's basic functionality.
+
+---
+
+# Troubleshooting
+
+## Extension does not appear
+
+Go to:
+
+```text
+chrome://extensions
+```
+
+Make sure **Developer mode** is enabled.
+
+Then click:
+
+```text
+Load unpacked
+```
+
+and select the folder containing:
+
+```text
+manifest.json
+```
+
+---
+
+## Prompts are not separated correctly
+
+Make sure there is a **blank line** between prompts.
+
+Correct:
 
 ```text
 Prompt 1
@@ -86,51 +442,105 @@ Prompt 1
 Prompt 2
 
 Prompt 3
-
-Prompt 4
 ```
 
-### Don't do this
+Incorrect:
 
 ```text
 Prompt 1
 Prompt 2
 Prompt 3
-Prompt 4
-```
-
-Keep a **blank line** between prompts so the extension can identify them as separate prompts.
-
----
-
-## Example
-
-Your `.txt` file:
-
-```text
-A cute golden retriever sitting in a beautiful garden, cinematic photography.
-
-A futuristic sports car driving through Tokyo at night, neon lights, rain.
-
-A traditional Indian village during sunrise, cinematic wide-angle photography.
-```
-
-The extension will interpret this as:
-
-```text
-Prompt 1 → Golden retriever
-
-Prompt 2 → Futuristic sports car
-
-Prompt 3 → Indian village
 ```
 
 ---
 
-## Important
+## Copy button does not work
 
-This extension is provided as an **unpacked Chrome extension**. It is not installed through the Chrome Web Store.
+Make sure the extension is properly loaded and enabled.
 
-You need to keep **Developer mode** enabled in Chrome to use it.
+You can also reload the extension from:
 
-The extension is designed to work with **Google Flow** and requires access to Google Flow in your browser.
+```text
+chrome://extensions
+```
+
+by clicking the reload icon for the extension.
+
+---
+
+# Project Structure
+
+```text
+Bulk_image_generator/
+│
+├── bulk image generator/
+│   ├── manifest.json
+│   ├── popup.html
+│   ├── popup.js
+│   ├── content.js
+│   ├── style.css
+│   └── ...
+│
+└── README.md
+```
+
+> The exact files may vary depending on the current version of the extension.
+
+---
+
+# Limitations
+
+The current version focuses on **prompt management and manual copying**.
+
+It does not provide automated bulk generation inside Google Flow.
+
+You still need to manually:
+
+```text
+Copy → Paste → Generate
+```
+
+for each prompt.
+
+---
+
+# Future Improvements
+
+Possible future improvements include:
+
+- Prompt history
+- Prompt search
+- Prompt editing
+- Prompt numbering
+- Better queue management
+- Generation status tracking
+- Improved UI
+- Additional prompt management features
+
+---
+
+# Disclaimer
+
+This is an independent browser extension project.
+
+It is not an official Google product and is not affiliated with or endorsed by Google.
+
+Google Flow's interface and functionality may change over time, which could affect compatibility with the extension.
+
+---
+
+# Author
+
+**Shailesh Shripathi**
+
+GitHub:
+
+https://github.com/shaileshgoku
+
+---
+
+## Repository
+
+**Bulk Image Generator**
+
+https://github.com/shaileshgoku/Bulk_image_generator
