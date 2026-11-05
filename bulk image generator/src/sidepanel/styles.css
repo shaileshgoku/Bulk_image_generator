@@ -1,0 +1,241 @@
+:root {
+    --bg-color: #121212;
+    --panel-bg: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --border-color: #333333;
+    --primary-color: #bb86fc;
+    --primary-hover: #9965f4;
+    --secondary-color: #333333;
+    --secondary-hover: #444444;
+    --success-color: #03dac6;
+    --error-color: #cf6679;
+    --warning-color: #f6a000;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.header h1 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.header p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.section h2 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+}
+
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    background-color: var(--panel-bg);
+    transition: border-color 0.3s;
+}
+
+.drop-zone.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(187, 134, 252, 0.05);
+}
+
+.drop-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.drop-zone p {
+    margin: 8px 0;
+    color: var(--text-secondary);
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--secondary-hover);
+}
+
+.btn-block {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+.status-message {
+    margin-top: 12px;
+    color: var(--success-color);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.queue-container {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.empty-queue-msg {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.queue-item {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.queue-item:last-child {
+    border-bottom: none;
+}
+
+.queue-item-status {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-waiting { color: var(--text-secondary); }
+.status-generating { color: var(--warning-color); }
+.status-completed { color: var(--success-color); }
+.status-failed { color: var(--error-color); }
+.status-paused { color: #888888; }
+
+.queue-item-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.queue-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.queue-item-id {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.queue-item-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 13px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background-color: var(--panel-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.controls {
+    position: sticky;
+    bottom: -16px;
+    background-color: var(--bg-color);
+    padding: 16px 0 0 0;
+    margin-top: 24px;
+    border-top: 1px solid var(--border-color);
+}

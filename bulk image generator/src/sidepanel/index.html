@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowBatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>⚡ FlowBatch</h1>
+        <p>Bulk Image Generator</p>
+    </div>
+
+    <div class="section">
+        <h2>PROMPTS</h2>
+        <div class="drop-zone" id="drop-zone">
+            <div class="drop-icon">📄</div>
+            <p>Drop prompts.txt here</p>
+            <p>or</p>
+            <button class="btn btn-secondary" id="choose-file-btn">Choose TXT File</button>
+            <input type="file" id="file-input" accept=".txt" hidden>
+        </div>
+        <div id="file-status" class="status-message hidden">
+            <span class="icon">✓</span> <span id="file-status-text">0 prompts loaded</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>QUEUE</h2>
+        <div class="queue-container" id="queue-container">
+            <div class="empty-queue-msg">Queue is empty. Load a file to begin.</div>
+            <!-- Queue items will be inserted here -->
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>PROGRESS</h2>
+        <div class="progress-info">
+            <span id="progress-text">0 / 0</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+        </div>
+        <div class="stats">
+            <span>Completed <span id="stat-completed">0</span></span>
+            <span>Failed <span id="stat-failed">0</span></span>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-primary btn-block" id="primary-action-btn" disabled>📋 Copy Next Prompt</button>
+        <div class="btn-group">
+            <button class="btn btn-secondary" id="mark-failed-btn" disabled>✕ Mark Failed</button>
+            <button class="btn btn-secondary" id="retry-btn" disabled>↻ Retry Failed</button>
+            <button class="btn btn-secondary" id="clear-btn" disabled>Clear Queue</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
